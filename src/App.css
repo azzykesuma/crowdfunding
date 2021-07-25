@@ -1,38 +1,668 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    font-family: 'Commissioner';
+    background-color: #E4FCFB;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* menu style */
+.MenuContainer {
+    background-color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    top: 5em;
+    left : 1.8em;
+    width : 320px;
+    z-index: 999;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.MenuContainer > ul > li {
+    list-style: none;
+    padding : 20px 30px;
+    font-weight: 700;
+}
+.MenuContainer > ul > li:hover {
+    color : hsl(176, 72%, 28%);
+    cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.line {
+    opacity: 0.1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+/* main style */
+.header {
+    background-image: url('./images/image-hero-mobile.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 300px;
+    background-size: cover;
+}
+
+.headerTitle {
+    display: flex;
+    justify-content: space-between;
+    padding : 30px 20px;
+    cursor: pointer;
+}
+
+.Logo {
+    margin: 0 auto;
+    position: absolute;
+    top : 12em;
+    left : 40%;
+    z-index: 998;
+}
+
+.desktopMenu {
+    display: none;
+}
+
+.BookmarkBtn {
+    display: none;
+}
+
+.bodyContainer {
+    width : 280px;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 5em;
+}
+
+.topSection {
+    text-align: center;
+    background-color : #fff;
+    border-radius: 10px;
+    padding-inline : 20px;
+    width : 100%;
+}
+
+.topSection > h1 {
+    font-size: 22px;
+    margin-top : 60px;
+}
+
+.topSection > p {
+    margin-top : 30px;
+    color : hsl(176, 72%, 28%);
+}
+
+.buttonContainer {
+    display : flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-block: 30px;
+}
+
+.buttonContainer > button {
+    padding : 15px;
+    width : 210px;
+    background-color: hsl(176, 50%, 47%);
+    color : #fff;
+    font-family: 'Commissioner',sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    border : none;
+    border-radius: 50px;
+    transition: 0.3s ease-in-out;
+}
+
+.buttonContainer > button:hover {
+    background-color: hsl(176, 72%, 28%);
+    cursor: pointer;
+}
+
+.midSection {
+    margin-top: 25px;
+    border-radius: 10px;
+}
+
+.midSection {
+    text-align: center;
+    background-color : #fff;
+    border-radius: 10px;
+    padding-inline : 20px;
+    width : 100%;
+}
+
+.description {
+    margin-top: 40px;
+}
+
+.description > h1 {
+    margin-bottom: 20px;
+}
+
+.description > p {
+    color :hsl(176, 72%, 28%);
+    margin-bottom: 20px;
+}
+
+.description > hr {
+    border : .5px solid hsl(176, 72%, 28%);
+    width : 70px;
+    margin : 0 auto;
+    opacity: 0.2;
+}
+
+.progressBarContainer {
+    background-color: #E4FCFB ;
+    width : 90%;
+    height : 10px;
+    border-radius: 50px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.progressBarMeter {
+    background-color: hsl(176, 50%, 47%);
+    width: 80%;
+    padding : 5px;
+    border-radius: 50px;
+}
+
+.bottomSection {
+    margin-top: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    padding-inline : 20px;
+}
+
+.bottomSection > h2 {
+    margin-block : 35px;
+    font-size: 20px;
+
+}
+
+.bottomSection > p {
+    color : hsl(176, 50%, 47%);
+    line-height: 1.5em;
+    font-weight: 500;
+}
+
+.card {
+    border : .3px solid hsl(176, 50%, 47%);
+    padding : 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.card > h2 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.pledgeDesc {
+    color : hsl(176, 50%, 47%);
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.card > p {
+    color : hsl(176, 72%, 28%);
+    line-height: 1.5em;
+}
+
+.cardBottom > span {
+    margin-top: 30px;
+    display : flex;
+    align-items: center;
+}
+
+.cardBottom > span > p {
+    margin-left: 5px;
+    color : hsl(176, 72%, 28%);
+}
+
+.cardBottom > button {
+    padding : 15px 30px;
+    margin-top: 30px;
+    border: none;
+    color : #fff;
+    background-color: hsl(176, 50%, 47%);
+    font-weight: 700;
+    font-family: 'Commissioner',sans-serif;
+    border-radius: 50px;
+    transition: 0.3s ease-in-out;
+}
+
+.cardBottom > button:hover {
+    background-color: hsl(0, 0%, 48%);
+    cursor: pointer;
+}
+
+.out {
+    opacity: 0.4;
+}
+
+/* modal mobile */
+
+.modalContainer {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 300px;
+    padding : 25px;
+    position: absolute;
+    top : 10em;
+    left: .8em;
+    z-index: 999;
+}
+
+.hide {
+    display : none;
+}
+
+.headerModal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerModal > h1 {
+    font-size: 18px;
+    margin-block : 20px 30px;
+}
+
+.headerModal > img {
+    cursor: pointer;
+}
+
+.modalContainer > p {
+    color : hsl(176, 50%, 47%);
+    font-size: 15px;
+    line-height: 1.5em;
+}
+
+.modalCard {
+    border: 1px solid hsl(176, 50%, 47%);
+    padding : 20px;
+    border-radius: 10px;
+    margin-block: 30px;
+}
+
+.radioContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+input[type=radio] {
+    width : 25px;
+    height : 25px;
+}
+
+
+label {
+    font-weight: 700;
+}
+
+label:hover {
+    color: hsl(176, 50%, 47%);
+    cursor: pointer;
+}
+
+.modalCard > p {
+    color : hsl(176, 50%, 47%);
+    margin-top: 45px;
+    line-height: 1.5em;
+}
+
+.modalCard > span {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.modalCard > span > h1 {
+    font-size: 20px;
+}
+
+.modalCard > span > p {
+    margin-left: 10px;
+}
+
+.selectedLine {
+    margin-block: 1em;
+    width : calc(100% + 15%);
+    position: relative;
+    right : 1.3em;
+    opacity: 0.2;
+}
+
+.inputPledge {
+    text-align: center;
+    width: 240px;
+}
+
+.inputContainer {
+    margin-top: 1em;
+}
+
+.inputContainer > span {
+    position: relative;
+}
+
+.inputContainer > span > input {
+    width : 30%;
+    padding : 15px;
+    text-align: center;
+    border-radius: 50px;
+    border : 1px solid hsl(176, 72%, 28%);
+    /* removing arrow for type number */
+    -moz-appearance: textfield;
+}
+
+.inputContainer > span > input:-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.inputContainer > span > input:focus {
+    outline: none;
+}
+
+.dollarSign {
+    position: absolute;
+    left : 10px;
+    top : 3px;
+}
+
+.inputContainer > button {
+    padding : 15px 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: hsl(176, 50%, 47%);
+    font-family: 'Commissioner',sans-serif;
+    font-weight: 700;
+    color : #fff;
+    margin-left: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.inputContainer > button:hover {
+    background-color: hsl(176, 72%, 28%);
+    cursor: pointer;
+}
+
+.blur {
+    opacity: 0.5;
+}
+
+/* success Message */
+
+.visible {
+    display: none;
+    
+}
+
+.messageContainer {
+    position: absolute;
+    top : 12em;
+    left : .5em;
+    background-color: #fff;
+    padding : 30px; 
+    text-align: center;
+    width : 80%;
+    border-radius: 10px;
+    z-index: 999;
+}
+
+.messageContainer > h1 {
+    font-size: 20px;
+    margin-block : 20px 30px;
+}
+
+.messageContainer > p {
+    font-family: 'Comissioner',sans-serif;
+    color : hsl(176, 72%, 28%);
+    line-height: 1.5em;
+    font-weight: 500;
+}
+
+.messageContainer > button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 40px;
+    font-family: 'Comissioner',sans-serif;
+    font-size: 16px;
+    background-color: hsl(176, 50%, 47%);
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+.messageContainer > button:hover {
+    background-color: hsl(176, 72%, 28%);
+    cursor: pointer;
+}
+
+.hideSucessMessage {
+    display: none;
+}
+
+/* error message */
+.error {
+    display: none;
+    margin-top: 10px;
+    font-family: 'Commissioner',sans-serif;
+    color: red;
+    font-style: italic;
+}
+
+/* desktop style */
+@media screen and (min-width : 1200px) {
+    .headerTitle {
+        cursor: initial;
+    }
+
+    .header {
+        background-image: url('./images/image-hero-desktop.jpg');
+    }
+
+    .hamburger {
+        display: none;
+    }
+    
+    .desktopMenu {
+        display: block;
+        position: absolute;
+        right : 160px;
+        top : 2em;
+    }
+
+    .desktopMenu > ul {
+        display: flex;
+    }
+
+    .desktopMenu > ul > li {
+        color: #fff;
+        list-style: none;
+        margin-left: 30px;
+    }
+
+    .desktopMenu > ul > li:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+
+    .bodyContainer {
+        min-width : 730px;
+        display: flex;
+        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        bottom: 5em;
+    }
+
+    .buttonContainer {
+        justify-content: space-between;
+    }
+
+    .Logo {
+        margin: 0 auto;
+        top : 12em;
+        left : 36em;
+        z-index: 998;
+    }
+
+    .bookMarkContainer {
+        display: flex;
+        align-items: center;
+    }
+
+    .bookmarkImg {
+        z-index : 999;
+    }
+
+    .BookmarkBtn {
+        display: block;
+        width : 170px;
+        padding : 20px;
+        border : none;
+        border-radius: 30px;
+        position: relative;
+        left : -50px;
+        font-family: 'Commisioner',sans-serif;
+        font-size: 16px;
+        color : hsl(0, 0%, 48%);
+        font-weight: 700;
+        text-align: right;
+    }
+
+    .midSection {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .midDescription {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .description > h1 {
+        padding-right: 40px;
+        border-right : .5px solid hsl(176, 50%, 47%);
+        margin-bottom: 10px;
+    }
+
+    .description > p {
+        text-align: center;
+        padding-right: 40px;
+    }
+
+    .description:nth-last-child(1) {
+        border : none;
+    }
+
+    .description > hr {
+        display: none;
+    }
+
+    .cardTitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 35px;
+    }
+
+    .cardTitle > p {
+        margin-bottom: 0;
+    }
+
+    .cardBottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+    .cardBottom > span {
+        display: flex;
+        align-items: center;
+    }
+
+    .cardBottom > button {
+        margin-top: 0;
+    }
+
+    /* modal desktop */
+    .modalContainer {
+        min-width: 726px;
+        padding : 25px;
+        position: absolute;
+        top : 10em;
+        left: 13em;
+    }
+    
+    .radioContainer {
+        justify-content: left;
+    }
+
+    label {
+        padding-left: 20px;
+    }
+
+    .modalCard > p {
+        padding-left: 40px;
+    }
+
+    .radioContainer > div {
+        display: flex;
+    }
+
+    .radioContainer > div > p {
+        margin-left: 20px;
+        color : hsl(176, 50%, 47%);
+    }
+    .inputPledge {
+        display: flex;
+        justify-content: space-between;
+        width : 700px;
+    }
+
+    .inputPledge > p {
+        display: flex;
+        align-items: center;
+    }
+
+    .inputContainer {
+        display: flex;
+        justify-content: center;
+    }
+
+    .inputContainer > span {
+      position: relative;
+      left : 2em;
+    }
+
+    .inputContainer > button {
+        margin-right: 30px;
+    }
+
+    .dollarSign {
+        left : 60px;
+        top : 16px;
+    }
+    /* success Message */
+    .messageContainer {
+        position: absolute;
+        top : 12em;
+        left : 20em;
+        width : 500px;
+    }
 }
